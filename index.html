@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anmol Mahay – Android Developer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== Variables ========== */
+:root {
+    --bg-color: #f5f7fb;
+    --text-color: #333;
+    --card-bg: #fff;
+    --header-bg: linear-gradient(135deg, #7b2ff7, #f107a3);
+    --accent: #ff5e62;
+}
+
+body.dark-mode {
+    --bg-color: #1e1e2f;
+    --text-color: #f5f5f5;
+    --card-bg: #2c2c3c;
+    --header-bg: linear-gradient(135deg, #7b2ff7, #f107a3);
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.4s, color 0.4s;
+}
+
+/* ========== Header ========== */
+header {
+    background: var(--header-bg);
+    padding: 60px 20px 40px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+header img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.7);
+    object-fit: cover;
+    margin-top: 20px;
+}
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+header p {
+    margin: 5px 0;
+}
+
+/* ========== CV & Theme Button ========== */
+#themeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    background: white;
+    color: #333;
+    transition: 0.3s;
+}
+#themeToggle:hover {
+    background: var(--accent);
+    color: white;
+}
+.cv-btn {
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 20px;
+    background: var(--accent);
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:500;
+    transition: 0.3s;
+}
+.cv-btn:hover {
+    background: #ff9966;
+}
+
+/* ========== Container & Sections ========== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+/* ========== Projects Grid ========== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: 0.3s, transform 0.5s, opacity 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.icon-box {
+    height: 120px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+}
+.tech {
+    font-size: 14px;
+    color: gray;
+}
+
+/* ========== Footer ========== */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* ========== Responsive ========== */
+@media(max-width:600px){
+    header h1 { font-size:28px; }
+    .section-title { font-size:24px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Anmol Mahay</h1>
+    <p>Android Developer | Kotlin & Java Specialist</p>
+    <img id="profileImg" src="Img.jpeg" alt="Profile Photo">
+    <p>Email: anmol.mahay@gmail.com | Phone: 9877662273</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/anmol-mahay-aa373715b" style="color:white;">linkedin.com/in/anmol-mahay-aa373715b</a></p>
+    <a href="Curriculum_Vitae.pdf" download class="cv-btn">Download CV</a>
+    <button id="themeToggle">🌙</button>
+</header>
+
+<div class="container">
+
+<h2 class="section-title">Professional Summary</h2>
+<p>Experienced Android Developer with 8+ years of experience crafting scalable, high‑performance mobile apps using Kotlin and Java. Strong expertise in MVVM, Clean Architecture, Firebase ecosystems, REST APIs, AWS, and secure application development. Passionate about delivering polished UI/UX and solving complex product challenges.</p>
+
+<h2 class="section-title">Projects</h2>
+
+<div class="project-grid">
+
+    <div class="card">
+        <div class="icon-box">🎮</div>
+        <h3>Dots & Boxes Game</h3>
+        <p class="tech">Java, Android Studio, XML</p>
+        <p>A strategic two‑player classic game where players draw lines to complete boxes. Designed game logic using HashMap and event‑based interactions.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">🎂</div>
+        <h3>CakeBakes – Shopping App</h3>
+        <p class="tech">Java, Firebase, Google Maps, Payment Gateway</p>
+        <p>Complete bakery shopping system with separate User/Admin apps, product management, live orders, online payments, and Firebase‑driven data sync.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">🌍</div>
+        <h3>Prudle Labs – Translator</h3>
+        <p class="tech">Java, REST APIs</p>
+        <p>Developed new translation module allowing users to convert text into multiple languages with audio playback through integrated speech systems.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">🏨</div>
+        <h3>Jazz Inn – Hotel Booking</h3>
+        <p class="tech">Kotlin, Google Maps, Payment Gateway</p>
+        <p>Implemented pre‑payment system, UI redesign, and location‑based hotel discovery. Managed CPanel backend updates and Play Store release.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">⏰</div>
+        <h3>To‑Do Reminder (Geo‑Fencing)</h3>
+        <p class="tech">Kotlin, Java, Geo‑Fencing, Firebase</p>
+        <p>Location‑triggered reminder app that notifies users upon entering specific areas using advanced geo‑fencing logic.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">🧾</div>
+        <h3>Pay Your Fee – Software</h3>
+        <p class="tech">PHP, Firebase, InnoDB</p>
+        <p>Fee collection software with automated receipt printing and dual storage (local + Firebase cloud sync).</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">📍</div>
+        <h3>Tracking Track – Employee Tracking</h3>
+        <p class="tech">PHP, XAMPP, AWS, API</p>
+        <p>Tracks employee activity and uploads live updates to AWS. Role‑based features for different employee hierarchies.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">📊</div>
+        <h3>Stitchers Salary – Work Management</h3>
+        <p class="tech">PHP, Firebase, XAMPP</p>
+        <p>Software to record daily production and automatically compute salaries. Includes bulk data entry and Firebase cloud backup.</p>
+    </div>
+
+</div>
+</div>
+
+<footer>
+    © 2025 Anmol Mahay – Portfolio Website
+</footer>
+
+<script>
+// Dark/Light Mode Toggle
+const toggleBtn = document.getElementById('themeToggle');
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+});
+
+// Scroll Fade-in Animation
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+cards.forEach(card => observer.observe(card));
+
+    // Profile image fallback: if base64 placeholder wasn't replaced, use a local file
+    const profileImg = document.getElementById('profileImg');
+    if (profileImg) {
+        const src = profileImg.getAttribute('src') || '';
+        if (src.includes('{{DATA}}') || src.trim() === '') {
+            console.warn('Profile image base64 not provided. Using local fallback "profile.jpg".');
+            profileImg.src = 'profile.jpg';
+        }
+    }
+</script>
+
+</body>
+</html>
